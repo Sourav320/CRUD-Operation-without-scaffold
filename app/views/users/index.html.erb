@@ -17,6 +17,8 @@
 <%# <p>Phone_no: <%= f.phone_no </p>%>
 <%# <% end %>
 <%# </ol> %>
+<%
+=begin %>
 <h1>User Name and their details</h1>
 
 <ul>
@@ -28,5 +30,18 @@
     </li>
   <% end %>
 </ul>
+<%
+=end  %>
+<h1>Articles</h1>
+
+<ul>
+  <% @users.each do |article| %>
+    <li>
+      <%= link_to article.name %>
+    </li>
+  <% end %>
+</ul>
+
+
 
 

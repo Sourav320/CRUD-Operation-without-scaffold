@@ -14,8 +14,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])   
   end
   def create
-    @user = User.new(user_params)   
-    if @user.save   
+    @user = User.new(user_params)  
+    if @user.save! 
       flash[:notice] = 'User added!'   
       redirect_to root_path   
     else   
@@ -46,7 +46,8 @@ class UsersController < ApplicationController
       render :destroy   
     end   
   end
+  private
   def user_params   
-    params.require(:user).permit(:name, :age, :email, :phone_number)   
+    params.require(:user).permit(:name, :age, :email, :phone_no)   
   end   
 end
