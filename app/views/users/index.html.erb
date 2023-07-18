@@ -1,0 +1,32 @@
+<h1>Hello! Users</h1>
+<h3>Here is your details</h3> 
+<ol>
+  <%# <% @users.each do |article| %>
+    <%# <li>
+      <a href="/users/<%= article.id %>
+        <%# <%= article.name%>
+      <%# </a> 
+    </li> %>
+  <%# <% end %> 
+<%# </ol> %>
+<%# 
+@users.each do |f| %>
+<%# <p>Name: <%= f.name </p>%>
+<%# <p>age: <%= f.age </p>%>
+<%# <p>Email: <%= f.email </p>%>
+<%# <p>Phone_no: <%= f.phone_no </p>%>
+<%# <% end %>
+<%# </ol> %>
+<h1>User Name and their details</h1>
+
+<ul>
+  <% @users.each do |article| %>
+    <li>
+      <a href="<%= user_path(article) %>">
+        <%= article.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+
