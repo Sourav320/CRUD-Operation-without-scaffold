@@ -1,8 +1,29 @@
-<h1>Users Details</h1>
+<%# <%= model: @user, url: users_path, method: :POST do |form| %>
 
-<p>Name: <%= @user.name%>&emsp;
-Age: <%= @user.age%>&emsp;
-E-mail: <%= @user.email%>&emsp;
+
+<h1>User Details</h1>
+
+<p>Name: <%= @user.name%> 
+
+Age: <%= @user.age%>
+
+E-mail: <%= @user.email%>
+
 Phone_no: <%= @user.phone_no%>
 </p>
+
+<ul>
+    <li><%= link_to "Edit", edit_user_path(@user) 
+    # this @user is id which is predefine rails 
+    %></li>
+    <li><%= link_to "Destroy", user_path(@user),data: {
+    # this @user also called id whcih is predefine autometically called by rails
+    turbo_method: :delete, 
+    # this delete is http verb which define routes
+    turbo_confirm: "Are you sure?"}
+    %></li>
+    <li><%= link_to "Home Page", users_path %></li> 
+</ul>
+
+
 

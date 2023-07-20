@@ -32,6 +32,9 @@
 </ul>
 <%
 =end  %>
+<%
+=begin
+%>
 <h1>Articles</h1>
 
 <ul>
@@ -41,6 +44,22 @@
     </li>
   <% end %>
 </ul>
+<%
+=end
+%> 
+<h1>Existing User</h1>
+
+<ul>
+  <% @users.each do |article| %>
+  <a href="/users/<%= article.id%>">
+    <li>
+      <%= article.name %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create New User", new_user_path%>
+
 
 
 

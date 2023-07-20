@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   # get 'users/index'
   root 'users#index'
-  # get 'users/view'
-  # get 'users/edit'
-  # get 'users/show'
-  # get '/users/:id', to: "users#show"
-  resources :users
+  # get 'users/:id/edit'
+  #  get 'user', to:'users#show' 
+  # patch '/users/:id'
+  # delete '/users/:id'
+   resources :users
+  # resource: user
+  # resolve('users') {[:user]}
+  # resolve('Geocoder') { [:geocoder] }
   # resources:users
   # resources:users, only: [:new, :create, :destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
