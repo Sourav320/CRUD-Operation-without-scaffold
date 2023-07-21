@@ -1,0 +1,25 @@
+<%= form_with model: user do |page| %>
+  <div>
+    <%= page.label :Name %><br>
+    <%= page.text_field :name %>
+  </div>
+
+  <div>
+    <%= page.label :Age %><br>
+    <%= page.number_field :age %><br>
+  </div>
+
+  <div>
+    <%= page.label :Email %><br>
+    <%= page.text_field :email %><br>
+  </div>
+  <div>
+    <%= page.label :Phone_No %><br>
+    <%= page.number_field :phone_no %><br>
+
+  </div>
+
+  <div>
+    <%= page.submit %>
+  </div>
+<% end %>
