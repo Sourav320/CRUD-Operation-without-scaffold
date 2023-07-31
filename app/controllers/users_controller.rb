@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)  
-    if @user.save    
+    if @user.save!    
       redirect_to root_path 
       # or you can use your model name for redirection @user  
     else     

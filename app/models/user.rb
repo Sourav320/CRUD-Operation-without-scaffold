@@ -8,17 +8,17 @@ class User < ApplicationRecord
     validates :age, presence: true, length: {maximum: 2}
     validates :phone_no, presence: true, length: {minimum:10}
     validates :email, presence:true  
-   
+    
 
     has_many :books
 
     has_one_attached :image 
 
-    VALID_STATUS = ['public', 'private', 'archived']
+    # VALID_STATUS = ['public', 'private', 'archived']
     
-    validates :status, inclusion: { in: VALID_STATUS }
+    # validates :status, inclusion: { in: VALID_STATUS }
      
-    def archived?
-        status == 'archived'
-    end
+    # def archived?
+    #     status == 'archived'
+    # end
 end
