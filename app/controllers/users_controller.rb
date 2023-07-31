@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+  # http_basic_authenticate_with name:"dhh", password:"secret", except: [:index, :show]
   def index
     @users=User.all 
     # special variable
@@ -31,7 +33,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])   
     if @user.update(user_params)   
       # flash[:notice] = 'User updated!'   
-      redirect_to @user 
+      # redirect_to @user
+      redirect_to root_path
     else   
       # flash[:error] = 'Failed to edit User!'   
       render :edit  
@@ -43,11 +46,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])   
       @user.destroy   
       # redirect_to root_path  
-      redirect_to @user    
+      redirect_to root_path 
+      # it's predefine that after destroy redirect to page on root
+
   end
 
   private
   def user_params   
-    params.require(:user).permit(:name, :age, :email, :phone_no)   
+    params.require(:user).permit(:name, :age, :email, :phone_no, :image)   
   end   
 end

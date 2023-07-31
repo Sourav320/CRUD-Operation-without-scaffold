@@ -1,7 +1,44 @@
-<h1>Hello! Users</h1>
-<h3>Here is your details</h3> 
-<ol>
-  <%# <% @users.each do |article| %>
+
+<h1>Users</h1>
+
+<% if model_signed_in? %>
+
+<%# this helper method associated with device's controller. It checks whether the user is signed in or not and returns a boolean true or false value%>
+
+  <p>Hello! Users <%= current_model.email %></p>
+  <%= button_to "sign out", destroy_model_session_path, method: :delete%>
+   
+  <%# current_user is a Devise helper that accesses the details of the user who is currently signed in to the application. For instance, if you sign in with sammy@example.com, the current_user helper would return the user model for sammy@example.com. So, when using current_user.email, you would get sammy@example.com as the result. By using Devise, you avoid having to implement this logic from scratch, saving you time and effort. %>
+  
+
+
+
+<% else %>
+  <% link_to "Sign_in", new_user_session_path %>
+<% end %>  
+
+
+<%# You are using the button_to method to define a button that takes the user to a specific route. You are also using helper methods to get these routes: destroy_user_session_path resolves to /users/sign_out and new_user_session_path resolves to /users/sign_in. (You can review the full list of route URL helpers by running bundle exec rails routes as mentioned in a previous step.)
+
+ %>
+
+
+
+<h1>Existing User</h1>
+
+<ul>
+  <% @users.each do |article| %>
+  <a href="/users/<%= article.id%>">
+    <li>
+      <%= article.name %>
+    </li>
+   <% end %>
+</ul>
+
+<%= link_to "Create New User", new_user_path%>
+
+
+<%# <% @users.each do |article| %>
     <%# <li>
       <a href="/users/<%= article.id %>
         <%# <%= article.name%>
@@ -47,20 +84,5 @@
 <%
 =end
 %> 
-<h1>Existing User</h1>
-
-<ul>
-  <% @users.each do |article| %>
-  <a href="/users/<%= article.id%>">
-    <li>
-      <%= article.name %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "Create New User", new_user_path%>
-
-
-
 
 

@@ -1,0 +1,14 @@
+
+<%= form_with model: [ @user, @user.books.build ] do |form| %>
+<p>
+    <%= form.label :Book%>
+    <%= form.text_field :book%>
+</p>
+<p>
+    <%= form.label :Catagory%>
+    <%= form.text_area :catagory%>
+</p>
+<p>
+    <%= form.submit %>
+</p>
+<% end %>

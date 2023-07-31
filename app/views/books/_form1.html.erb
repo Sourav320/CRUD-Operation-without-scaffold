@@ -1,0 +1,15 @@
+<%= form_with model: nb do |page| %>
+  <div>
+    <%= page.label :Book %><br>
+    <%= page.text_field :book %>
+  </div>
+
+  <div>
+    <%= page.label :Catagory %><br>
+    <%= page.text_area :catagory %><br>
+
+  <div>
+    <%= page.submit %>
+  </div>
+
+<% end %>

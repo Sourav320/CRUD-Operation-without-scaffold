@@ -24,6 +24,14 @@ Phone_no: <%= @user.phone_no%>
     %></li>
     <li><%= link_to "Home Page", users_path %></li> 
 </ul>
+<h2>"Add a book"</h2>
+<%= render "books/form" %>
 
+
+<h2>Books</h2>
+<%= render "books/book",  det: @user.books %>
+
+<%# <h2>Edit to add book</h2>
+<%= link_to "Edit", edit_user_book_path(@user) %>
 
 

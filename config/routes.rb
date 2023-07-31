@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
+  
+  devise_for :models
   # get 'users/index'
   root 'users#index'
   # get 'users/:id/edit'
   #  get 'user', to:'users#show' 
   # patch '/users/:id'
   # delete '/users/:id'
-   resources :users
+  resources :users do
+    resources :books
+  end
+   
   # resource: user
   # resolve('users') {[:user]}
   # resolve('Geocoder') { [:geocoder] }
